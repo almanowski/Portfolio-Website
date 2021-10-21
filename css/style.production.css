@@ -231,6 +231,10 @@ button:visited {
   padding-bottom: 15px;
 }
 
+h1.about-me__item {
+  margin-top: -15px;
+}
+
 a.about-me__item {
   margin: 0 40%;
   min-width: 200px;
@@ -244,7 +248,7 @@ a.credit-link {
   font-weight: 100;
   font-size: 12px;
   text-decoration: none;
-  margin: -50px 30% 0;
+  margin: 0 30%;
 }
 
 @supports (display:grid) {
@@ -529,12 +533,13 @@ a.adress__item {
 
 /*  --------------------------  footer --------------------------   */
 
-.footer__title {
-  text-align: center;
+.footer {
+  clear: both;
+  margin: 15px 45% 0;
 }
 
-.footer__links {
-  margin: 15px 45% 0;
+.footer__title {
+  text-align: center;
 }
 
 .footer__link-github {

@@ -17,7 +17,7 @@ primary: 400
 title + button: 600
 */
 
-/*  --------------------------  generel --------------------------   */
+/*  --------------------------  general --------------------------   */
 :root {
   --prim-color: #07290d;
   --bg-color: #fafafa;
@@ -73,10 +73,6 @@ h3 {
   font-size: 18px;
 }
 
-p {
-  margin: 0;
-}
-
 ul {
   padding-inline-start: 0;
 }
@@ -126,22 +122,6 @@ button:visited,
   color: var(--bg-color);
 }
 
-/*  --------------------------  body --------------------------   */
-
-.body {
-  display: grid;
-  grid-template: auto 1fr auto  / 1fr;
-  grid-gap: 80px;
-}
-
-.body__header {
-  align-self: start;
-}
-
-.body__footer {
-  align-self: end;
-}
-
 /*  --------------------------  header --------------------------   */
 
 .page-header {
@@ -179,103 +159,112 @@ button:visited,
 /*  --------------------------  main --------------------------   */
 
 /* ---------------- index ---------------- */
-
 .profil {
-  display: grid;
-  grid-template: 1fr 1fr 0.5fr / 1fr 1fr;
-  grid-column-gap: 20px;
-  justify-content: center;
+  margin: 110px auto 150px;
 }
 
 .profil__portrait {
-  width: 250px;
   border-radius: 50%;
-  grid-row: 1/4;
-  justify-self: end;
+  width: 250px;
+  float: left;
+  margin: 0 15px 150px 35%;
 }
 
 .profil__title {
-  align-self: center;
+  padding: 30px 10px 20px;
 }
 
-/* ---------------- work ----------------  */
-
-.main__titel {
-  text-align: center;
-  margin-top: -100px;
+.profil__text {
+  margin-bottom: 30px;
 }
 
-/* start grid fallback */
-.project-list {
-  display: inline-block;
-  width: 33%;
-}
-
-/* end grid fallback */
-
-@supports (display: grid) {
-  .project-list {
-    width: auto;
+@supports (display:grid) {
+  .profil {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 25px;
-    margin: 35px 50px -60px;
+    grid-template: 1fr 1fr 0.5fr / 1fr 1fr;
+    grid-column-gap: 20px;
+    justify-content: center;
+    margin: 110px auto 150px;
   }
 
-  .project-list__item {
-    background: var(--secondary-bg-color);
-    color: var(--bg-color);
-    width: auto;
-    min-height: auto;
+  .profil__portrait {
+    width: 250px;
+    border-radius: 50%;
+    grid-row: 1/4;
+    justify-self: end;
     margin: 0;
-    padding: 20px;
   }
 
-  .project-list__item h2 {
-    padding-bottom: 10px;
-  }
-
-  .project-list__item p {
-    padding-bottom: 10px;
-  }
-
-  .project-list__item a {
-    color: var(--bg-color);
-    text-decoration: underline;
+  .profil__title {
+    align-self: center;
+    padding: 0;
   }
 }
 
 /* ---------------- about ---------------- */
 
 .about-me {
-  display: grid;
-  grid-template-columns: 0.5fr;
-  grid-row-gap: 30px;
-  justify-content: center;
-  margin-top: -100px;
-  margin-bottom: -80px;
+  display: block;
+  margin: 25px 20%;
 }
 
 .about-me__item {
-  justify-self: center;
-  align-self: center;
-}
-
-p.about-me__item {
   text-align: center;
+  padding-bottom: 15px;
 }
 
-svg.about-me__item,
-.butto {
+a.about-me__item {
+  margin: 0 40%;
   min-width: 200px;
 }
 
-.credit-link {
+svg.about-me__item {
+  margin: 0 20%;
+}
+
+a.credit-link {
   font-weight: 100;
   font-size: 12px;
   text-decoration: none;
-  margin-top: -25px;
-  margin-bottom: 40px;
+  margin: -50px 30% 0;
+}
+
+@supports (display:grid) {
+  .about-me {
+    display: grid;
+    grid-template-columns: 0.5fr;
+    grid-row-gap: 25px;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .about-me__item {
+    justify-self: center;
+    align-self: center;
+    padding: 0;
+  }
+
+  a.about-me__item {
+    padding: 15px;
+    margin: 0;
+  }
+
+  p.about-me__item {
+    text-align: center;
+    margin: 0;
+  }
+
+  svg.about-me__item,
+  .button {
+    min-width: 200px;
+    margin: 0;
+  }
+
+  a.credit-link {
+    margin-top: -30px;
+    margin-bottom: 30px;
+    padding: 0;
+  }
 }
 
 /* --- svg animation --- */
@@ -353,61 +342,186 @@ svg.about-me__item,
   animation: 2s zzz-moving infinite linear;
 }
 
+/* ---------------- work ----------------  */
+
+.main__titel {
+  text-align: center;
+}
+
+.project-list__item {
+  display: inline-block;
+  width: 25%;
+  margin: 25px 60px 50px;
+}
+
+@supports (display: grid) {
+  .project-list {
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+    margin: 35px 50px 15px;
+  }
+
+  .project-list__item {
+    background: var(--secondary-bg-color);
+    color: var(--bg-color);
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .project-list__item h2 {
+    padding-bottom: 10px;
+  }
+
+  .project-list__item p {
+    padding-bottom: 10px;
+  }
+
+  .project-list__item a {
+    color: var(--bg-color);
+    text-decoration: underline;
+  }
+}
+
 /* ---------------- contact ---------------- */
 
 .adress {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
+  display: block;
+  text-align: center;
+  margin: 100px 0 80px;
 }
 
-.adress__item {
-  justify-self: center;
-  text-align: center;
+h1.adress__item {
+  padding-bottom: 25px;
+}
+
+a.adress__item {
+  margin-top: 40px;
+}
+
+@supports (display:grid) {
+  .adress {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .adress__item {
+    justify-self: center;
+    text-align: center;
+  }
+
+  h1.adress__item {
+    padding-bottom: 0;
+  }
+
+  a.adress__item {
+    margin-top: 0;
+  }
 }
 
 /*  --------------------------  footer --------------------------   */
 
-.footer {
-  display: grid;
-  grid-template-columns: 1fr 0.15fr 1fr;
-  grid-row-gap: 15px;
-}
-
 .footer__title {
-  grid-column: 1/4;
-  justify-self: center;
+  text-align: center;
 }
 
-.footer__link-xing {
-  align-self: end;
-  justify-self: end;
+.footer__links {
+  margin: 15px 45% 0;
 }
 
 .footer__link-github {
-  align-self: center;
-  justify-self: center;
+  padding: 0 15px;
 }
 
-.footer__link-linkedin {
-  align-self: start;
-  justify-self: start;
+@supports (display: grid) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .footer__title {
+    justify-self: center;
+    margin: 0;
+  }
+
+  .footer__links {
+    display: grid;
+    justify-self: center;
+    grid-template-columns: 1fr 0.15fr 1fr;
+  }
+
+  .footer__link-xing {
+    align-self: end;
+    justify-self: end;
+  }
+
+  .footer__link-github {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .footer__link-linkedin {
+    align-self: start;
+    justify-self: start;
+  }
 }
 
-/*  --------------------------  media queriesl --------------------------   */
+/*  --------------------------  media queries --------------------------   */
 
 @media all and (max-width: 500px) {
-  .page-header {
-    flex-wrap: wrap;
-    justify-content: center;
+  .profil__portrait {
+    float: none;
+    margin: -60px 25% 0;
   }
 
-  .navigation-list {
-    justify-content: center;
+  .profil {
+    text-align: center;
   }
 
-  .project-list {
-    grid-template-columns: 1fr;
+  a.about-me__item {
+    margin: 0 20%;
+  }
+
+  svg.about-me__item {
+    margin: 0 0 0 -10;
+  }
+
+  a.credit-link {
+    margin: -50px 0 0 -10px;
+  }
+
+  .project-list__item {
+    width: 60%;
+    margin: 25px 20% 50px;
+    text-align: center;
+  }
+
+  .adress {
+    margin: 25px 0;
+  }
+
+  .footer__links {
+    margin: 15px 32% 0;
+  }
+
+  @supports (display: grid) {
+    .profil__portrait {
+      margin: 0;
+    }
+
+    .project-list {
+      grid-template-columns: 1fr;
+      margin: 0;
+    }
+
+    .project-list__item {
+      width: auto;
+      margin: 0;
+    }
   }
 }
 
@@ -417,52 +531,76 @@ svg.about-me__item,
   }
 }
 
-/* shared code */
 @media all and (max-width: 750px) {
-  .body {
-    grid-gap: 60px;
-  }
-
-  .main__titel {
-    margin-top: -20px;
-  }
-
-  .project-list {
-    grid-gap: 10px;
-    margin-bottom: -20px;
-  }
-
-  .project-list__item:last-child {
-    grid-column: auto /auto;
-    grid-row: auto / auto;
-  }
-
-  .profil {
-    grid-template-columns: 1fr;
-    text-align: center;
-    grid-row-gap: 15px;
-  }
-
   .profil__portrait {
-    grid-row: 1/4;
-    align-self: center;
-    justify-self: center;
+    margin-left: 15%;
   }
 
-  .about-me {
-    margin-top: -20px;
+  a.about-me__item {
+    margin: 0 25%;
   }
 
-  .footer {
-    grid-column-gap: 40px;
+  svg.about-me__item {
+    margin: 0 10%;
   }
 
-  h1 {
-    font-size: 22px;
+  a.credit-link {
+    margin: -30px 10% 0;
   }
 
-  svg {
-    height: 90%;
-    width: 90%;
+  .project-list__item {
+    width: 60%;
+    margin: 25px 18% 50px;
+    text-align: center;
+  }
+
+  .adress {
+    margin: 50px 0 40px;
+  }
+
+  .footer__title {
+    text-align: center;
+  }
+
+  .footer__links {
+    margin: 15px 40% 0;
+  }
+
+  @supports (display: grid) {
+    h1 {
+      font-size: 22px;
+    }
+
+    svg {
+      height: 90%;
+      width: 90%;
+    }
+
+    .profil {
+      grid-template-columns: 1fr;
+      text-align: center;
+      grid-row-gap: 15px;
+      margin: 25px auto 50px;
+    }
+
+    .profil__portrait {
+      grid-row: 1/4;
+      align-self: center;
+      justify-self: center;
+      margin-left: 20px;
+    }
+
+    .project-list {
+      grid-gap: 10px;
+    }
+
+    .project-list__item:last-child {
+      grid-column: auto /auto;
+      grid-row: auto / auto;
+    }
+
+    .footer {
+      grid-column-gap: 40px;
+    }
   }
 }

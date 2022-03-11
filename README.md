@@ -1,6 +1,12 @@
 # Portfolio 
 ![Badge](https://img.shields.io/badge/demo-online-green)
 
+<p>&nbsp;</p>
+
+<p align="center">
+<img src="./img/portfolio.png" alt="App demo gif" />
+</p>
+
 Creating this portfolio is part of my [CF Full-Stack Web Development Program](https://careerfoundry.com/en/courses/become-a-web-developer/).
 
 Live Demo [here](https://almanowski.github.io/portfolio-website/).

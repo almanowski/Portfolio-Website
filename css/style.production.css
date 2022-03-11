@@ -593,7 +593,7 @@ a.adress__item {
 
 .footer {
   clear: both;
-  margin: 15px 45% 0;
+  margin: 15px auto 0;
 }
 
 .footer__title {

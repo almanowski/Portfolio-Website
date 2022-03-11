@@ -11,3 +11,8 @@ Live Demo [here](https://almanowski.github.io/portfolio-website/).
 To build a responsive website using HTML and CSS that will showcase my
 professional portfolio, which will include the projects I'll build throughout
 my Full-Stack Web Development Program.
+<p>&nbsp;</p>
+
+## 💻 Technologies Used
+* HTML
+* CSS
